@@ -1,3 +1,4 @@
+
 (*
  * Project: lab7
  * User: alexa
@@ -37,6 +38,7 @@ begin
     end;
 end;
 
+
 procedure key_pres();
 var
     key:char;
@@ -56,19 +58,19 @@ begin
         kp:=false;
         closegraph();
     end;
-    'a': x1:=x1-20;
-    'd': x1:=x1+20;
-    's': y1:=y1+20;
-    'w': y1:=y1-20;
+    'a': x1:=x1-60;
+    'd': x1:=x1+60;
+    's': y1:=y1+60;
+    'w': y1:=y1-60;
     'z':
     begin
-        if iter > 1 then
+        if iter > 0 then
         begin
             iter:=iter-1;
-            dx2:=dx2/1.4;
-            dx3:=dx3/1.4;
-            dy2:=dy2/1.4;
-            dy3:=dy3/1.4;
+            dx2:=dx2/1.2;
+            dx3:=dx3/1.2;
+            dy2:=dy2/1.2;
+            dy3:=dy3/1.2;
         end;
     end;
     'x':
@@ -76,10 +78,10 @@ begin
         if iter < 7 then
         begin
             iter:=iter+1;
-            dx2:=dx2*1.4;
-            dx3:=dx3*1.4;
-            dy2:=dy2*1.4;
-            dy3:=dy3*1.4;
+            dx2:=dx2*1.2;
+            dx3:=dx3*1.2;
+            dy2:=dy2*1.2;
+            dy3:=dy3*1.2;
         end;
     end;
     End;
@@ -88,7 +90,8 @@ end;
 begin
     gd := detect;
     initgraph(gd, gm, '');
-    iter:=3;
+    setcolor(10);
+    iter:=1;
     kp:=true;
     visualpage := 1;
     x1:=320;y1:=20;
